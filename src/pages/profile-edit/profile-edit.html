@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="cameroun">
+    <ion-title>Editer le profil</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content style="background-color: rgb(255, 255, 255);">
+  <div padding *ngIf="profile">
+    <div align="center" style="border: 1px solid lightgrey; padding-bottom: 10px">
+      <h2 style="padding-top: 20px; padding-bottom: 10px">Changer la photo de profil</h2>
+      <ion-row>
+        <ion-col col-12>
+          <img class="img-thm" [src]="imageURI"/>
+  
+          <ion-row>
+            <button ion-button color="primary" outline block (tap)="getAppPicture()">
+              <ion-icon name="camera" item-start style="padding-right: 5px"></ion-icon>
+              Prendre une photo
+            </button>
+          </ion-row>
+  
+          <ion-row>
+            <button ion-button color="noir" outline block (tap)="getGalPicture()">
+              <ion-icon name="image" item-start style="padding-right: 5px"></ion-icon>
+              Récupérer depuis la Gallery
+            </button>
+          </ion-row>
+          <hr>
+  
+          <ion-row>
+            <button ion-button block color="danger" (tap)="uploadImage()">
+              Enregistrer
+            </button>
+          </ion-row>
+        </ion-col>
+  
+      </ion-row>
+    </div>
+
+    <br>    
+    <div class="formular" style="border: 1px solid lightgrey; padding-bottom: 10px">
+      <h2 style="padding-top: 20px; text-align: center">Modifier son profil</h2>
+      <form [formGroup]="profileForm" (ngSubmit)="updateProfile()"  *ngIf="!showRoleSelection" style="padding: 5px">
+        <ion-item>
+          <ion-label floating>Age</ion-label>
+          <ion-input type="text" formControlName="age"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Profession</ion-label>
+          <ion-input type="text" formControlName="profession"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Pays</ion-label>
+          <ion-input type="text" formControlName="country"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Ville</ion-label>
+          <ion-input type="text" formControlName="city"></ion-input>
+        </ion-item>
+         
+        <button margin-top ion-button color="cameroun" block type="submit" [disabled]="!profileForm.valid">Valider</button>
+
+      </form>
+    </div>
+
+  </div> 
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="cameroun">
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title align="center"><img src="assets/imgs/toolbar.png" width="80px"/></ion-title>
+    <ion-buttons start (tap)="openNotifPage()">
+      <button ion-button icon-only>
+        <ion-icon name="notifications" style="font-size: 18px"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end (tap)="openProfPage()">
+      <button ion-button icon-only>
+        <ion-icon name="person" style="font-size: 18px"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+  <div *ngIf="project">
+    <ion-card padding>
+      <h1>Project Here</h1><br>
+
+        Date de création du projet {{project.created_at | date:"d/MM/y"}}<br>
+        Date de récolte {{project.cropDate | date:"d/MM/y"}}<br>
+        Type de projet {{project.projectType}}<br>
+        Quantité d'engrais {{project.fertilizerProportion}} Kg<br>
+        Quantité de produits phytosanitaire {{project.phytoThreatment}} Kg<br>
+        Spéculation cultivée {{project.product}}<br>
+        Prix du kilo de la spéculation {{project.productPrice}} FCFA<br>
+        Date de sémi {{project.semDate | date:"d/MM/y"}}<br>
+        Densité de sémi {{project.semDensity}} m<br>
+        Surface de culture {{project.surface}} hectare<br>
+        Nombre de plan par hectare {{project.treeNumberByHectare}}<br>
+        Pépinière {{project.treeNursery}}<br>
+        Zone agricole {{project.zone}}<br>
+        Gain estimmé après récolte {{project.cropTotalProduct}} FCFA<br>
+
+    </ion-card>
+  </div>
+
+  <div *ngIf="project===undefined">
+    <div class="row">
+      <div class="col cont" text-center>
+        <button ion-button color="cameroun" (tap)="startProject()">Demarer un projet</button>
+      </div>
+    </div>
+  </div>
+</ion-content>

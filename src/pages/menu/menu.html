@@ -1,0 +1,23 @@
+<ion-menu side="left" [content]="content">
+  <ion-header>
+    <ion-toolbar color="cameroun">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon item-start [name]="p.icon" color="light"></ion-icon>
+        {{ p.title }}
+      </button>
+      <button ion-item menuClose>
+        <ion-icon item-start name="call"></ion-icon>
+        Assistance
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+  
+<!-- main navigation -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>

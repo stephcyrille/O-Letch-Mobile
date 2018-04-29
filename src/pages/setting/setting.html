@@ -1,0 +1,76 @@
+<ion-header>
+
+  <ion-navbar color="cameroun">
+    <ion-title>Parametres</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <ion-list-header>
+          <h1>Paramètres</h1>
+        </ion-list-header>
+    
+        <ion-item>
+          <ion-label>Alert Météo</ion-label>
+          <ion-toggle value="foo" checked="true"></ion-toggle>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Projets</ion-label>
+          <ion-radio checked="true" value="go"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Améliorer l'IA</ion-label>
+          <ion-range>
+            <ion-icon range-left small name="sunny"></ion-icon>
+            <ion-icon range-right name="sunny"></ion-icon>
+          </ion-range>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Notifications push</ion-label>
+          <ion-toggle color="danger"></ion-toggle>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Confidentialité</ion-label>
+          <ion-select>
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Gandalf</ion-label>
+          <ion-toggle color="energized" checked="true"></ion-toggle>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Arwen</ion-label>
+          <ion-toggle color="royal"></ion-toggle>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Treebeard</ion-label>
+          <ion-toggle color="secondary" checked="true"></ion-toggle>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Boromir</ion-label>
+          <ion-toggle color="royal"></ion-toggle>
+        </ion-item>
+    
+        <button ion-button full color="dark" (tap)="logout()"><ion-icon name="log-out"></ion-icon> <span style="margin-left: 5px">déconnecter</span></button>
+    
+    
+      </ion-list>
+    
+</ion-content>

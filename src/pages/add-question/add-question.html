@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar color="cameroun">
+        <ion-title>Nouvelle question</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card padding>
+    <h2 align="center">Ajouter une nouvelle question</h2><br>
+
+    <form [formGroup]="questionDataForm" (ngSubmit)="submitQuestion()">
+        <ion-list>
+            <ion-item>
+                <ion-input type="text" placeholder="Titre" formControlName="title"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" placeholder="Contenu" formControlName="content"></ion-input>
+            </ion-item>
+        </ion-list>
+
+
+        <ion-row style="padding-top: 10px;">
+            <button ion-button block color="cameroun" [disabled]="!questionDataForm.valid">POSTER</button>
+        </ion-row>
+    </form>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-navbar color="cameroun">
+    <ion-title>
+        Question
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <div class="contenu" style="background-color: rgb(230, 230, 230)">
+      <div *ngIf="question" class="carte">
+        <h6 style="text-align:center; padding-top:10px;">{{ question.title }}</h6>
+
+        <ion-row>
+            <ion-col col-2 style="padding-right:0px">
+                <ion-row><ion-icon style="display: block; margin: 0 auto; font-size: 22px;" name="oletch-up"></ion-icon></ion-row>
+                <ion-row style="text-align:center; display: block; margin: 0 auto;">1</ion-row>
+                <ion-row><ion-icon style="display: block; margin: 0 auto; font-size: 21px;" name="oletch-down"></ion-icon></ion-row>
+            </ion-col>
+
+            <ion-col col-10 style="text-align: justify; padding-left: 0px; padding-right:10px">
+              {{ question.content }} 
+              <br><br><br>
+              
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-10 style="text-align: right">
+              <i style="color: rgb(0, 71, 0)">{{ question.author.user.username }}</i><br>
+              {{ question.created_at | date:"d/MM/y" }}
+          </ion-col>
+
+          <ion-col col-2>
+            <img src="http://mebenga.pythonanywhere.com{{ question.author.avatar }}">
+            <!-- <img src="http://192.168.1.100:8000{{ question.author.avatar }}"> -->
+          </ion-col>
+
+        </ion-row>
+      </div>
+      <h6 style="margin-left: 10px"><i>REPONSES</i></h6>
+      
+      <div *ngIf="answers">
+        <hr>
+        <div class="reponses" *ngFor="let answer of answers">
+          <ion-row>
+              <ion-col col-2 style="padding-right:0px">
+                  <ion-row><ion-icon style="display: block; margin: 0 auto; font-size: 22px;" name="oletch-up"></ion-icon></ion-row>
+                  <ion-row style="text-align:center; display: block; margin: 0 auto;">{{ answer.vote }}</ion-row>
+                  <ion-row><ion-icon style="display: block; margin: 0 auto; font-size: 21px;" name="oletch-down"></ion-icon></ion-row>
+              </ion-col>
+
+              <ion-col col-10 style="text-align: justify; padding-left: 0px; padding-right:10px">
+                {{ answer.content }} 
+                <br><br><br>
+                
+              </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-10 style="text-align: right">
+                <i style="color: rgb(0, 71, 0)">{{ answer.author.user.username }}</i><br>
+                {{ answer.created_at | date:"short" }}
+            </ion-col>
+            
+            <!-- <div *ngIf="answerUserAvatar"> -->
+              <ion-col col-2>
+                <img src="http://mebenga.pythonanywhere.com{{ answer.author.avatar }}">
+                <!-- <img src="http://192.168.1.100:8000{{ answer.author.avatar }}"> -->
+              </ion-col>
+            <!-- </div> -->
+          </ion-row>
+          <hr>
+        </div>
+      </div>
+  </div>
+
+
+  <ion-fab right bottom *ngIf="!toggle">
+    <button ion-fab color="cameroun" (tap)="showAnswerForm()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>
+
+<div *ngIf="toggle" class="answerForm" id="answerForm">
+  <form [formGroup]="answerForm" (ngSubmit)="addNewAnswer()">
+    <ion-item style="background-color: #007900;">
+      <ion-input class="input-text" style="background-color: #007900;" type="text" formControlName="content"  placeholder="Votre reponse ici.."></ion-input>
+      <button ion-button style="background-color: #fff;" type="submit" [disabled]="!answerForm.valid" clear color="cameroun" item-right>Repondre</button>
+    </ion-item>
+  </form>
+</div>

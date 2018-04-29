@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="cameroun">
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title align="center"><img src="assets/imgs/toolbar.png" width="80px"/></ion-title>
+    <ion-buttons start (tap)="openNotifPage()">
+      <button ion-button icon-only>
+        <ion-icon name="notifications" style="font-size: 18px"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end (tap)="openProfPage()">
+      <button ion-button icon-only>
+        <ion-icon name="person" style="font-size: 18px"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="cards-bg social-cards">
+  <ion-refresher (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <div *ngIf="articles">
+    <ion-card *ngFor="let article of articles"> 
+      <!-- <img src="http://192.168.1.100:8000{{ article.image }}" height="200px"> -->
+      <img src="http://mebenga.pythonanywhere.com{{ article.image }}" height="200px">
+    
+      <ion-card-content>
+        <h2><b>{{ article.title }}</b></h2>
+
+        <p style="text-align:justify; padding-top: 10px">
+          {{ article.content }}
+        </p>
+      </ion-card-content>
+    
+    </ion-card>
+
+  </div>
+</ion-content>

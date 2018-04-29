@@ -1,0 +1,70 @@
+<ion-content padding style="background-image: url('assets/imgs/backgroung.png');">
+  <div class="logo">
+    <img src="assets/imgs/oletchLogoText.png" />
+    <img src="assets/imgs/barre.png" class="barre" />
+
+    <div class="logoCap" align="center">
+      <span>Reveillez l'agriculteur qui sommeil en vous</span>
+    </div>
+  </div>
+
+
+  <div class="formular">
+      <form [formGroup]="loginData" (ngSubmit)="login()"  *ngIf="!showRoleSelection">
+        <ion-row style="margin-top: 20px">
+            <ion-col>
+              <ion-list inset style="margin-bottom: 0">
+
+                  <ion-item style="margin-bottom: 10px">
+                    <ion-label>Identifiant</ion-label>
+                    <ion-input type="username" formControlName="username"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Mot de passe</ion-label>
+                    <ion-input type="password" formControlName="password"></ion-input>
+                  </ion-item>
+              </ion-list>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+              <ion-list inset style="margin-top: 0">
+                <button margin-top ion-button color="cameroun" class="login-button" type="submit" [disabled]="!loginData.valid">Connexion</button>
+              </ion-list>
+            </ion-col>
+        </ion-row>
+      </form>
+  </div>
+
+  <div class="register">
+      <ion-row>
+        <ion-col col-6 (tap)="register()">
+          Inscription ici
+        </ion-col>
+        <ion-col col-2>
+          <ion-icon name="oletch-twitter" color="#fff"></ion-icon>
+        </ion-col>
+        <ion-col col-2>
+          <ion-icon name="oletch-facebook" color="#fff"></ion-icon>
+        </ion-col>
+        <ion-col col-2>
+          <ion-icon name="mail" color="#fff"></ion-icon>
+        </ion-col>
+      </ion-row>
+  </div>
+
+  <div class="registerMessage">
+    En vous inscrivant vous acceptez <u>les termes et le conditions privées</u> d'Oletch-Agricons
+  </div>
+
+
+        
+
+
+
+
+    
+    
+
+</ion-content>

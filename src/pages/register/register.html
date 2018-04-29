@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-navbar color="cameroun">
+        <ion-title></ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-image: url('assets/imgs/backgroung.png');">
+<div class="logo" align="center">
+    <img src="assets/imgs/oletchLogoText.png" width="60%" />
+    <img src="assets/imgs/barre.png" class="barre" />
+</div>
+
+<div class="logoCap" align="center">
+    <span>Reveillez l'agriculteur qui sommeil en vous</span>
+</div>
+
+
+<div class="formular">
+    <form [formGroup]="signUpData" (ngSubmit)="register()"  *ngIf="!showRoleSelection">
+        <ion-row style="margin-top: 5px">
+            <ion-col>
+            <ion-list inset style="margin-bottom: 0">
+
+                <ion-item style="margin-bottom: 5px">
+                    <ion-label>Identifiant</ion-label>
+                    <ion-input type="username" formControlName="username" style="width: 60%"></ion-input>
+                </ion-item>
+                <ion-item style="margin-bottom: 5px">
+                    <ion-label>Nom (s)</ion-label>
+                    <ion-input type="text" formControlName="firstName"></ion-input>
+                </ion-item>
+                <ion-item style="margin-bottom: 5px">
+                    <ion-label>Prenom (s)</ion-label>
+                    <ion-input type="text" formControlName="lastName"></ion-input>
+                </ion-item>
+                <ion-item style="margin-bottom: 5px">
+                    <ion-label>Email</ion-label>
+                    <ion-input type="email" placeholder="xyz@mail.xz" formControlName="email"></ion-input>
+                </ion-item>
+                <ion-item style="margin-bottom: 5px">
+                    <ion-label>Mot de passe</ion-label>
+                    <ion-input type="password" formControlName="password"></ion-input>
+                </ion-item>
+                <div *ngIf="errorPass" style="color: red; background-color: rgb(211, 211, 211); border-radius: 5px" align="center">
+                    {{errorPass}}
+                </div>
+                <ion-item>
+                    <ion-label>Confirm. pass</ion-label>
+                    <ion-input type="password" formControlName="confirm_password"></ion-input>
+                </ion-item>
+            </ion-list>
+
+            <div class="registerMessage">
+                En vous inscrivant vous acceptez <u>les termes et le conditions privées</u> d'Oletch-Agricons
+            </div>
+
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+            <ion-list inset style="margin-top: -10px">
+                <button margin-top ion-button class="login-button" color="cameroun" type="submit" [disabled]="!signUpData.valid">Enregistrer</button>
+            </ion-list>
+            </ion-col>
+        </ion-row>
+    </form>
+</div>
+
+
+</ion-content>
+      

@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-navbar color="cameroun">
+        <ion-title>Faites le pas...</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card padding>
+    <form [formGroup]="projectBaseForm" (ngSubmit)="addProForm()">
+        <h1 align="center">Le grand demarage!!</h1>
+        <ion-item>
+            <ion-label>Zone agro-écologique</ion-label>
+            <ion-select formControlName="zone" required>
+            <ion-option value="Z1">Nord et Extrême Nord</ion-option>
+            <ion-option value="Z2">Adamaoua, département du mbam</ion-option>
+            <ion-option value="Z3">Ouest et Nord-Ouest</ion-option>
+            <ion-option value="Z4">Littoral et Sud-Ouest</ion-option>
+            <ion-option value="Z5">Centre, Sud, Est</ion-option>
+            </ion-select>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label>Surface à exploiter en hectare</ion-label>
+            <ion-select formControlName="surface">
+            <ion-option value="1">1</ion-option>
+            <ion-option value="2">2</ion-option>
+            <ion-option value="3">3</ion-option>
+            <ion-option value="4">4</ion-option>
+            <ion-option value="0">Autre</ion-option>
+            </ion-select>
+        </ion-item>
+        
+        
+        <ion-item>
+            <ion-label>Spéculation</ion-label>
+            <ion-select formControlName="speculation">
+            <ion-option value="arachide">Arachide</ion-option>
+            <ion-option value="banane">Banane</ion-option>
+            <ion-option value="ble">Blé</ion-option>
+            <ion-option value="cacao">Cacao</ion-option>
+            <ion-option value="caffe">Caffé</ion-option>
+            <ion-option value="haricot">Haricot</ion-option>
+            <ion-option value="mais">Maïs</ion-option>
+            <ion-option value="manioc">Manioc</ion-option>
+            <ion-option value="plantain">Plantain</ion-option>
+            <ion-option value="pomme de terre">Pomme de terre</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <button ion-button text-center block color="cameroun" type="submit" [disabled]="!projectBaseForm.valid">Submit</button>
+    </form>
+
+  </ion-card>
+
+</ion-content>

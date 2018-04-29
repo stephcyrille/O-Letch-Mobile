@@ -1,0 +1,21 @@
+page-menu {
+    ion-menu .menu-inner ion-content{
+        background-color: #007900;
+    }
+
+    ion-menu .menu-inner ion-content .scroll-content ion-list button{
+        background-color: #007900;
+        color: rgb(216, 216, 216);
+        transition: 0.1s;
+    }
+
+    ion-menu .menu-inner ion-content .scroll-content ion-list button:focus{
+        color: #ececec;
+        background-color: rgba(216, 216, 216, 0.411);
+        transition: 0.1s;
+    }
+
+    ion-menu .menu-inner ion-content .scroll-content ion-list button ion-icon:focus{
+        color: #007900;
+    }
+}

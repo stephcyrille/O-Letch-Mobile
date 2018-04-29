@@ -1,0 +1,82 @@
+page-rgister{
+    .toolbar {
+        .toolbar-background {
+        background: transparent;
+        }
+    }
+
+    .scroll-content {
+    }
+
+    .logo{
+        margin-top: -20px;
+    }
+
+    ion-row {
+        align-items: center;
+        text-align: center;
+    }
+  
+    .logoCap span {
+        padding-top: 5px;
+        color:  rgb(226, 226, 226);
+        //text-shadow: 2px 1px 0 rgb(12, 105, 0);
+    }
+
+    ion-item {
+        width: 100%;
+        border-radius: 30px !important;
+        padding-left: 10px !important;
+        margin-bottom: 5px;
+        background-color: rgba(255, 145, 0, 0.376);
+        opacity: 0.7;
+        font-size: 0.9em;
+        width: 90%;
+        height: 1px;
+    }
+
+    ion-list {
+        margin: 0;
+    }
+
+    .formular{
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 15px;
+    }
+
+    .button-md {
+        width: 100%;
+        border-radius: 30px;
+        font-size: 0.9em;
+        border: 1px solid rgb(199, 199, 199);
+        background-color: #bb73065b;
+    }
+
+    .button-md:active {
+        border: 1px solid rgb(194, 116, 0);
+        background-color: rgba(78, 78, 78, 0.123);
+        color: rgb(223, 223, 223);
+    }
+
+    .button-md:focus {
+        border: 1px solid rgb(194, 116, 0);
+        background-color: rgba(78, 78, 78, 0.123);
+        color: rgb(201, 201, 201);
+    }
+
+    .button-md:hover {
+        border: 1px solid rgb(194, 116, 0);
+        background-color: rgba(78, 78, 78, 0.123);
+        color: rgb(212, 212, 212);
+    }
+
+    .registerMessage{
+        color: rgb(216, 216, 216);
+        margin-top: 8px;
+        text-align: center;
+        font-size: 0.8em;
+    }
+}
+
+

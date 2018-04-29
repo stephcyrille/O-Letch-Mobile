@@ -1,0 +1,58 @@
+ion-icon {
+    &[class*="oletch-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 1em;
+        height: 1em;
+    }
+    // custom icons
+    &[class*="oletch-up"] {
+        mask-image: url(../assets/imgs/icon/up-arrow.svg);
+    }
+    &[class*="oletch-down"] {
+        mask-image: url(../assets/imgs/icon/down-arrow.svg);
+    }
+    &[class*="oletch-fruit"] {
+        mask-image: url(../assets/imgs/icon/apple.svg);
+    }
+    &[class*="oletch-coffee"] {
+        mask-image: url(../assets/imgs/icon/coffee.svg);
+    }
+    &[class*="oletch-seeds"] {
+        mask-image: url(../assets/imgs/icon/seeds.svg);
+    }
+    &[class*="oletch-tuber"] {
+        mask-image: url(../assets/imgs/icon/tuber.svg);
+    }
+    &[class*="oletch-vegetables"] {
+        mask-image: url(../assets/imgs/icon/vegetables.svg);
+    }
+    &[class*="oletch-wheat"] {
+        mask-image: url(../assets/imgs/icon/wheat.svg);
+    }
+    &[class*="oletch-facebook"] {
+        mask-image: url(../assets/imgs/icon/facebook.svg);
+    }
+    &[class*="oletch-twitter"] {
+        mask-image: url(../assets/imgs/icon/twitter.svg);
+    }
+    &[class*="oletch-edit"] {
+        mask-image: url(../assets/imgs/icon/edit.svg);
+    }
+
+
+}
+
+.content-md{
+    background-color: #d3d3d345;
+}
+
+.promptCustomCss{
+    button{
+        text-align: left;
+    }
+}

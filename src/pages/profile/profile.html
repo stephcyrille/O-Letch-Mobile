@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="cameroun">
+    <ion-buttons start>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title>Mon Profil</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="editProfile()">
+        <ion-icon name="oletch-edit" style="font-size: 18px"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content style="background-color: rgb(255, 255, 255);">
+  <ion-refresher (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngIf="profile; else other" padding style="background-color:#007900; border-bottom: 5px solid lightgrey">
+    <br>
+    <div align="center">
+      <img class="img-thm" src="http://mebenga.pythonanywhere.com{{ profile.avatar }}">
+      <!-- <img class="img-thm" src="http://192.168.1.100:8000{{ profile.avatar }}"> -->
+    </div>
+
+    <div align="center" style="padding-top: 5px; color: rgb(228, 228, 228)">
+      
+      <h2>{{ profile.user.first_name }} {{ profile.user.last_name }} (<i>{{ profile.user.username }}</i>)</h2>
+      CE {{ profile.city }}, {{ profile.country }}<br>
+      {{ profile.profession }}<br>
+      (+237) {{ profile.phone }}
+    </div>
+  </div>
+
+
+  <ion-card padding>
+    <h2>Stats</h2>
+    <hr>
+    <ion-row>
+      <ion-col col-10>
+        Nombre de projets
+      </ion-col>
+      <ion-col col-2 align="right">
+        1
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-8>
+        Type de compte
+      </ion-col>
+      <ion-col col-4 align="right">
+        <span style="color: gray"><i>Basic</i></span>
+      </ion-col>
+    </ion-row>
+
+    <br><br>
+    <button ion-button color="orangine" outline>Devenir premium</button>
+  </ion-card>
+  
+  <div padding>
+    <button ion-button full color="danger">Suprimer profil</button>
+  </div>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="cameroun">
+    <ion-title>Meteo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let city of cityItems" padding>
+    <div *ngIf="city">
+    <h1>{{ city.location.name }}</h1>
+        {{ city.location.region }}, {{ city.location.country }}<br>
+
+    <ion-row>
+      <ion-col col-2>
+        <img class="img-thumb" src="http:{{ city.current.condition.icon }}">
+      </ion-col>
+    
+      <ion-col col-10 style="text-align: right; padding-right: 15px;">
+        {{ city.current.condition.text }}<br>
+        Température: {{ city.current.temp_c }} °C<br>
+        <!--Température résentie:{{ city.current.feelslike_c }} °C<br>-->
+        Vitesse du vent: {{ city.current.wind_kph }} Km/h<br>
+        Humidité: {{ city.current.humidity }}<br>
+      </ion-col>
+    </ion-row>
+    </div>
+  </ion-card>
+  
+</ion-content>

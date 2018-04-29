@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="cameroun">
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title align="center"><img src="assets/imgs/toolbar.png" width="80px"/></ion-title>
+    <ion-buttons start (tap)="openNotifPage()">
+      <button ion-button icon-only>
+        <ion-icon name="notifications" style="font-size: 18px"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end (tap)="openProfPage()">
+      <button ion-button icon-only>
+        <ion-icon name="person" style="font-size: 18px"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+   
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let question of questions" (click)="openNavDetailsPage(question)" icon-start>
+      <ion-icon name="chatboxes" color="cameroun" item-start><span style="font-size: 0.45em"> {{ question.vote }}</span></ion-icon>
+      <div style="color: #383838; font-size: 0.9em">
+        {{ question.title }}<br>
+        {{ question.content }}<br>
+      </div>
+      <div text-right style="padding-top: 10px">
+        <span style="color: #525252; font-size: 0.8em">{{ question.created_at | date:"d/MM/y" }} par </span>
+        <i style="color: #007900; font-size: 0.8em">{{ question.author.user.username }}</i>
+      </div>
+    </button>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="cameroun" (tap)="addQuestion()"><ion-icon name="oletch-edit"></ion-icon></button>
+  </ion-fab>
+</ion-content>
